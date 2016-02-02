@@ -5,21 +5,22 @@ var game = {
         player2:{},
         round: 0,
         currentQuestion: 0,
-        questions: [
-          'Who directed this movie?', // director 0
-          'Who wrote this movie?', // writer
-          'What did this movie gross wordlwide?', // gross
-          'What was the production cost?', // production cost
-          'When was this movie released?', // release date
-          'Who composed the soundtrack?', // composer
-          'Which character said: "God creates dinosaurs. God destroys dinosaurs. God creates man. Man destroys God. Man creates dinosaurs."', //quote1 6
-          'Who said: "Find Nedry! Check the vending machines!"', //quote2
-          'Who said:"Yeah, but, John, if Pirates of the Caribbean breaks down, the pirates do not eat the tourists."', //quote3 7
-            ],
         movies: [
                {
                  title: "Jurassic Park",
+                 trailer: 'http://www.youtube.com/embed/QWBKEmWWL38?autoplay=1&loop=1&playlist=QWBKEmWWL38',
 
+                 questions: [ // game.movies[game.round].questions[game.currentQuestion]
+                   'Who directed this movie?', // director 0
+                   'Who wrote this movie?', // writer
+                   'What did this movie gross wordlwide?', // gross
+                   'What was the production cost?', // production cost
+                   'When was this movie released?', // release date
+                   'Who composed the soundtrack?', // composer
+                   'Which character said: "God creates dinosaurs. God destroys dinosaurs. God creates man. Man destroys God. Man creates dinosaurs."', //quote1 6
+                   'Who said: "Find Nedry! Check the vending machines!"', //quote2
+                   'Who said:"Yeah, but, John, if Pirates of the Caribbean breaks down, the pirates do not eat the tourists."', //quote3 7
+                   'Who played the character John Hammond?'], //array 9 which is Q10
                  buttonOptions: [
                    ["Steven Spielberg", "James Cameron","Ed Zwick","Colin Trevorrow","Chris Columbus"], //director
                    ["David Koepp", "James Cameron","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
@@ -30,6 +31,7 @@ var game = {
                    ["Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","John Hammond","Ray Arnold"], //qoute1
                    ["John Hammond","Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","Ray Arnold"], //quote2
                    ["Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","John Hammond","Ray Arnold"], //qoute2
+                   ["Richard Attenborough", "Michale Kane", "Ian McKellen","Lewis Dodgson", "Bob Peck"],
                  ]
 
                 //  director:"Steven Spielberg",
@@ -101,7 +103,10 @@ var game = {
  // $("#3").html("Boogey");
  // $("#4").html("Boogey");
 
+
 function populateBoard(){
+
+  $('#trailer-container').attr('src', game.movies[game.round].trailer)
 
   //This is saying correct answer is in position 1(change later to randowmize)
   correctAnswer = game.movies[game.round].buttonOptions[game.currentQuestion][0]
@@ -112,7 +117,7 @@ function populateBoard(){
 
   // Question: This s saying to change quesion div to our question array above, and it notes currentQuestion as the position.
   //Our click function below says we are changinf current question number eveytime we click.
-  $("#question").html(game.questions[game.currentQuestion]);
+  $("#question").html(game.movies[game.round].questions[game.currentQuestion]);
   $("#1").html(buttonOptions[0]);
   $("#2").html(buttonOptions[1]);
   $("#3").html(buttonOptions[2]);
@@ -127,8 +132,10 @@ $('.b').click(function(){
   // check if it's the correct answer
   if($(this).text() == correctAnswer) {
     console.log("Correct!")
+    $("#correct").text("Correct! "+ correctAnswer+".");
   } else {
     console.log("Wrong!")
+    $("#correct").text("Sorry.  Try the next question.");
   }
   game.currentQuestion += 1
   populateBoard()
