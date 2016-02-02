@@ -6,24 +6,30 @@ var game = {
         round: 0,
         currentQuestion: 0,
         questions: [
-          'Who directed this movie?', // director
+          'Who directed this movie?', // director 0
           'Who wrote this movie?', // writer
-          'What did this movie gross?', // gross
+          'What did this movie gross wordlwide?', // gross
           'What was the production cost?', // production cost
-          'When was it released?', // release date
-          'Who composed the soundtrack?' // composer
-        ],
+          'When was this movie released?', // release date
+          'Who composed the soundtrack?', // composer
+          'Which character said: "God creates dinosaurs. God destroys dinosaurs. God creates man. Man destroys God. Man creates dinosaurs."', //quote1 6
+          'Who said: "Find Nedry! Check the vending machines!"', //quote2
+          'Who said:"Yeah, but, John, if Pirates of the Caribbean breaks down, the pirates do not eat the tourists."', //quote3 7
+            ],
         movies: [
                {
                  title: "Jurassic Park",
 
                  buttonOptions: [
-                   ["Steven Spielberg", "James Cameron","Ed Zwick","Colin Trevorrow","Chris Columbus"],
-                   ["David Koepp", "James Cameron","Tony Gilroy","David S. Goyer"," Andy Wachowski"],
-                   ["$1.3 Billion", "$1.8 Billion","$550 Million","$257 Million"," $100 Million"],
-                   ["$63 million", "$125 Million","$55 Million","$25 Million"," $104 Million"],
-                   ["1993", "1995","1989","1997"," 2001"],
-                   ["John Williams", "James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"]
+                   ["Steven Spielberg", "James Cameron","Ed Zwick","Colin Trevorrow","Chris Columbus"], //director
+                   ["David Koepp", "James Cameron","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
+                   ["$1.3 Billion", "$1.8 Billion","$550 Million","$257 Million"," $100 Million"], //Gross
+                   ["$63 million", "$125 Million","$55 Million","$25 Million"," $104 Million"], //budget
+                   ["1993", "1995","1989","1997"," 2001"], //release
+                   ["John Williams", "James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"], //composer
+                   ["Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","John Hammond","Ray Arnold"], //qoute1
+                   ["John Hammond","Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","Ray Arnold"], //quote2
+                   ["Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","John Hammond","Ray Arnold"], //qoute2
                  ]
 
                 //  director:"Steven Spielberg",
@@ -97,14 +103,15 @@ var game = {
 
 function populateBoard(){
 
+  //This is saying correct answer is in position 1(change later to randowmize)
   correctAnswer = game.movies[game.round].buttonOptions[game.currentQuestion][0]
-  // var optionsArray = game.movies[game.round].wrongDirectors
-  // optionsArray.splice(Math.round(Math.random() * (optionsArray.length)), 0, correctAnswer)
-  // optionsArray.splice((optionsArray.length),0,game.movies[game.round].director)
 
+
+//This is saying the
   var buttonOptions = game.movies[game.round].buttonOptions[game.currentQuestion]
 
-  // add the html to the DOM
+  // Question: This s saying to change quesion div to our question array above, and it notes currentQuestion as the position.
+  //Our click function below says we are changinf current question number eveytime we click.
   $("#question").html(game.questions[game.currentQuestion]);
   $("#1").html(buttonOptions[0]);
   $("#2").html(buttonOptions[1]);
