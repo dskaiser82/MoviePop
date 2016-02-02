@@ -40,7 +40,10 @@ h1{font-family: 'Lobster', cursive;
 }
 
 
-
+#trailer{
+  float: left;
+  margin-left: auto;
+}
 #holder {
   width: 800px;
   height: 550px;
