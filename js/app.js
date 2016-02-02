@@ -104,9 +104,14 @@ var game = {
  // $("#4").html("Boogey");
 
 
+function setTrailer(){
+  $('#trailer-container').attr('src', game.movies[game.round].trailer)
+}
+
+setTrailer();
+
 function populateBoard(){
 
-  $('#trailer-container').attr('src', game.movies[game.round].trailer)
 
   //This is saying correct answer is in position 1(change later to randowmize)
   correctAnswer = game.movies[game.round].buttonOptions[game.currentQuestion][0]
