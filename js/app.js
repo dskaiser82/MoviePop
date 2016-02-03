@@ -100,12 +100,20 @@ var game = {
  // $("#3").html("Boogey");
  // $("#4").html("Boogey");
 
-
-function setTrailer(){
-  $('#trailer-container').attr('src', game.movies[game.round].trailer)
+function start(){
+$("#question").text("Welcome to MoviePop: a movie quiz game. Please select one or two players to begin. ");
+$("#b-box").hide();
 }
 
-setTrailer();
+start();
+
+function setTrailer(){
+$('#trailer-container').attr('src', game.movies[game.round].trailer)
+
+
+}
+
+
 
 function populateBoard(){
 
@@ -127,7 +135,7 @@ function populateBoard(){
   $("#5").html(buttonOptions[4]);
 }
 
-populateBoard()
+//populateBoard()
 
 $('.b').click(function(){
   console.log($(this).text())

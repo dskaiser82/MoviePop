@@ -80,8 +80,32 @@ margin: auto;
   width: auto;
   margin-top: 10px;
 
+}
+
+#b-box-player{
+  height: 300px;
+  width: 500px;
+  margin: auto;
+}
+
+#six{
+  margin-right: 50px;
+  margin-top: 50px;
+}
+
+#six{
+  margin-top: 50px;
+}
+
+.p{
+  width: 150px;
+  height: 50px;
+  background-color: #B22222;
+  color: white;
+  font-size: 12px;
 
 }
+
 
 
 .b{
