@@ -1,5 +1,6 @@
 console.log("Hi Dan")
 var correctAnswer = null
+var playerCount = null
 var game = {
         player1: {},
         player2:{},
@@ -103,6 +104,17 @@ var game = {
 function start(){
 $("#question").text("Welcome to MoviePop: a movie quiz game. Please select one or two players to begin. ");
 $("#b-box").hide();
+$( ".p" ).click(function() {
+  $( "#b-box-player" ).fadeOut( "slow", function() {
+    setTrailer()
+    populateBoard()
+    $("#b-box").fadeIn()
+  });
+});
+
+
+
+
 }
 
 start();
@@ -148,5 +160,6 @@ $('.b').click(function(){
     $("#correct").text("Sorry.  Try the next question.");
   }
   game.currentQuestion += 1
+  playerCount += 1
   populateBoard()
 })
