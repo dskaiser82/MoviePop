@@ -34,43 +34,40 @@ var game = {
                    ["Richard Attenborough", "Michale Kane", "Ian McKellen","Lewis Dodgson", "Bob Peck"],
                  ]
 
-                //  director:"Steven Spielberg",
-                //    wrongDirectors:["James Cameron","Ed Zwick","Colin Trevorrow","Chris Columbus"],
-                //  writer:"David Koepp",
-                //    wrongActors:["James Cameron","Tony Gilroy","David S. Goyer"," Andy Wachowski"],
-                //  gross:"$1.3 Billion",
-                //    wrongGross:["$1.8 Billion","$550 Million","$257 Million"," $100 Million"],
-                //  production: "$63 million",
-                //    wrongProduction:["$125 Million","$55 Million","$25 Million"," $104 Million"],
-                //  release:"1993",
-                //    wrongRelease:["1995","1989","1997"," 2001"],
-                //  composer:"John Williams",
-                //     wrongcomposer:["James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"],
-                 //
-                //  actor:["Dr. Alan Grant","Dr. Ellie Sattler","Dr. Ian Malcolm","John Hammond","Ray Arnold","Dennis Nedry",
-                //         "Henry Wu"],
-                //  quotes: ["God creates dinosaurs. God destroys dinosaurs. God creates man. Man destroys God. Man creates dinosaurs.",
-                //           "Find Nedry! Check the vending machines!","It's a UNIX system! I know this!","We have all the problems of a major theme park and a major zoo and the computer's not even on its feet yet.",
-                //            "Keep absolutely still. Its vision is based on movement."]
 
                 },
 
-                 {
-                   title: "Blood Diamond",
-                   director:"Edward Zwick",
-                   wrongDirectors:["James Cameron","Tony Scott","Robert Zemeckis","Ridley Scott"],
-                   writer:"Charles Leavitt",
-                   gross:"$171 Million",
-                   production: "$100 million",
-                   release:"2006",
-                   composer:"James Newton Howard",
-                   actor:["Danny Archer","Solomon Vandy","Maddy Bowen","Dia Vandy"],
-                   quotes: ["In America, it's bling bling. But out here it's bling bang.",
-                            "The world is falling apart and all we hear about is blowjob-gate.",
-                             "T.I.A. This is Africa."],
+                {
+                  title: "Titanic",
+                  trailer: 'http://www.youtube.com/embed/zCy5WQ9S4c0?autoplay=1&loop=1&playlist=zCy5WQ9S4c0',
+
+                  questions: [ // game.movies[game.round].questions[game.currentQuestion]
+                    'Who directed this movie?', // director 0
+                    'Who wrote this movie?', // writer
+                    'What did this movie gross wordlwide?', // gross
+                    'What was the production cost?', // production cost
+                    'When was this movie released?', // release date
+                    'Who composed the soundtrack?', // composer
+                    'Which character said: "That is what everybody says but, with all due respect, Miss, I am not the one hanging off the back of a ship here."', //quote1 6
+                    'Who said: "You are not to see that boy again. Do you understand me? Rose, I forbid it."', //quote2
+                    'Who said:"Seeing her coming out of the darkness like a ghost ship, it still gets me every time."', //quote3 7
+                    'Who played the female lead Rose?'], //array 9 which is Q10
+                  buttonOptions: [
+                    ["James Cameron", "Stephen Spielberg","George Lucas","Ridley Scott","Chris Columbus"], //director
+                    [ "James Cameron", "David Koepp","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
+                    ["$2.19 Billion", "$1.6 Billion","$550 Million","$257 Million"," $100 Million"], //Gross
+                    ["$200 million", "$125 Million","$175 Million","$50 Million"," $104 Million"], //budget
+                    ["1997", "1993","1989","2003"," 2001"], //release
+                    ["James Horner", "john Williams","Hans Zimmer","Alan Silvestri","Thomas Newman"], //composer
+                    ["Jack Dawson","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown","Brock Lovett"], //qoute1
+                    ["Ruth Dewitt Bukater","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown","Brock Lovett"], //quote2
+                    ["Brock Lovett","Jack Dawson","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown"], //qoute2
+                    ["Kate Winslet", "Kate Beckinsale", "Cate Blanchett","Kathy Bates", "Gloria Stuart"],
+                  ]
 
 
-                },
+                 },
+
 
                 {
                   title: "The Shawshank Redemption",
