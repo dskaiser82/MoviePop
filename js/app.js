@@ -162,6 +162,7 @@ var game = {
 
                 {
                   title: "The Shawshank Redemption",
+                  trailer: 'http://www.youtube.com/embed/6hB3S9bIaco?autoplay=1&loop=1&playlist=6hB3S9bIaco',
                   director:"Frank Darabont",
                   wrongDirectors:["James Cameron","Christopher Nolan","Robert Zemeckis","Ridley Scott"],
                   writer:"Frank Darabont",
@@ -215,11 +216,17 @@ start();
 
 //Sets First Trailer
 function setTrailer(){
+if(playerCount == 0){
 $('#trailer-container').attr('src', game.movies[0].trailer)
-//if playerCount > 9
-//$('#trailer-container').attr('src', game.movies[1].trailer)
-//if playerCount > 19
-//$('#trailer-container').attr('src', game.movies[2].trailer)
+}
+if(playerCount == 10){
+  $('#trailer-container').attr('src', game.movies[1].trailer)
+
+}
+ if(playerCount == 20){
+   $('#trailer-container').attr('src', game.movies[2].trailer)
+
+ }
 
 
 }
@@ -284,6 +291,7 @@ console.log(playerCount)
     game.currentQuestion += 1
     playerCount += 1
 
+    setTrailer()
     playerTurn()
     populateBoard()
 })
