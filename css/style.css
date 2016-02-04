@@ -11,6 +11,14 @@
   background-repeat: repeat-x;
 }
 
+.seats{
+  background-repeat: repeat-x;
+  background-image: url("http://motorcitymuckraker.com/wp-content/uploads/2013/08/Movie-theater.jpg");
+  background-repeat: repeat-x;
+  height: 800px;
+
+}
+
 h1{font-family: 'Lobster', cursive;
   font-size: 60px;
   color: white;

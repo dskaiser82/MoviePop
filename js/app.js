@@ -100,13 +100,13 @@ var game = {
 //Start screen
 function start(){
 $("#question").text("Welcome to MoviePop: a movie quiz game. Please select one or two players to begin. ");
+$("#p1").hide();
+$("#p2").hide();
 $("#b-box").hide();
-$(".square").hide();
 $( ".p" ).click(function() {
   $( "#b-box-player" ).fadeOut( "slow", function() {
     setTrailer()
     populateBoard()
-    $(".square").fadeIn();
     $("#b-box").fadeIn()
 
   });
@@ -122,31 +122,9 @@ $("#single-player-button").click(function() {
    $("#p2-counter").fadeOut();
    $("#p2-score").fadeOut();
     });
-//    $("#p1-score").text(answerCounter);
-// else  $( "#seven" ).click(function() {
-//    singlePlayer == false
-//
-// });
-//
-// }
-//
-
-
-
-
-
-
-
-
 
 
 start();
-
-
-
-
-
-
 
 
 //Sets First Trailer
@@ -163,6 +141,8 @@ $('#trailer-container').attr('src', game.movies[game.round].trailer)
 
 
 function populateBoard(){
+
+
 
 
   //This is saying correct answer is in position 1(change later to randowmize)
@@ -190,8 +170,8 @@ $('.answer-button').click(function(){
   if($(this).text() == correctAnswer) {
     console.log("Correct!")
     $("#correct").text("Correct! "+ correctAnswer+".");
-
-    //if single player
+console.log(playerCount)
+    //if single player true
 
     if(singlePlayer == true ){
       answerCounterP1 += 1
@@ -199,10 +179,11 @@ $('.answer-button').click(function(){
 
 
     }
-  else {
-    if (playerCount < 5 || (playerCount > 10 && playerCount < 16) || (playerCount > 20 && playerCount < 25)){
+  else { //paramaters of single player if there is two players
+    if (playerCount < 5 || (playerCount >= 10 && playerCount < 15) || (playerCount >= 20 && playerCount < 25)){
       answerCounterP1 += 1
       $("#p1-score").text(answerCounterP1);
+      $("#p1").fadeIn()
 
     } else {
       answerCounterP2 += 1
@@ -210,12 +191,15 @@ $('.answer-button').click(function(){
 
     }
   }
-  } else {
+  } else {//for wrong answers
     console.log("Wrong!")
     $("#correct").text("Sorry.  Try the next question.");
   }
     game.currentQuestion += 1
     playerCount += 1
+
+
+
     populateBoard()
 
 
