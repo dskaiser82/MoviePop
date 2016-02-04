@@ -35,39 +35,60 @@ var game = {
                    'Who said: "Find Nedry! Check the vending machines!"', //quote2
                    'Who said:"Yeah, but, John, if Pirates of the Caribbean breaks down, the pirates do not eat the tourists."', //quote3 7
                    'Who played the character John Hammond?',
-                   'Who directed this movie?', // TITANIC!!!!!
-                   'Who wrote this movie?', // writer
-                   'Who composed the soundtrack?', // composer
-                   'What did this movie gross wordlwide?', // gross
-                   'What was the production cost?', // production cost
-                   'When was this movie released?', // release date
-                   'Which character said: "That is what everybody says but, with all due respect, Miss, I am not the one hanging off the back of a ship here."', //quote1 6
-                   'Who said: "You are not to see that boy again. Do you understand me? Rose, I forbid it."', //quote2
-                   'Who said:"Seeing her coming out of the darkness like a ghost ship, it still gets me every time."', //quote3 7
-                   'Who played the female lead Rose?',
+                     'Who directed this movie?', // TITANIC!!!!!
+                     'Who wrote this movie?', // writer
+                     'Who composed the soundtrack?', // composer
+                     'What did this movie gross wordlwide?', // gross
+                     'What was the production cost?', // production cost
+                     'When was this movie released?', // release date
+                     'Which character said: "That is what everybody says but, with all due respect, Miss, I am not the one hanging off the back of a ship here."', //quote1 6
+                     'Who said: "You are not to see that boy again. Do you understand me? Rose, I forbid it."', //quote2
+                     'Who said:"Seeing her coming out of the darkness like a ghost ship, it still gets me every time."', //quote3 7
+                     'Who played the female lead Rose?',
+                             'Who directed this movie?', // SHAWSHANK
+                             'Who wrote this movie?', // writer
+                             'Who composed the soundtrack?', // composer
+                             'What did this movie gross wordlwide?', // gross
+                             'What was the production cost?', // production cost
+                             'When was this movie released?', // release date
+                             'Which character said: "Get busy living, or get busy dying."', //quote1 6
+                             'Who said: "Andy Dufresne - who crawled through a river of [expletive] and came out clean on the other side."', //quote2
+                             'Who said:"Lord! It is a miracle! Man up and vanished like a fart in the wind!" ', //quote3 7
+                             'Who played Andy Dufresne',
 
                   ], //DO Not move this bracket
                  buttonOptions: [
                    [ "James Cameron","Ed Zwick","Colin Trevorrow","Steven Spielberg","Chris Columbus"], //director
                    [ "James Cameron", "David Koepp","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
                    ["$1.3 Billion", "$1.8 Billion","$550 Million","$257 Million"," $100 Million"], //Gross
-                   [ "$125 Million","$55 Million", "$63 million","$25 Million"," $104 Million"], //budget
+                   [ "$125 Million","$55 Million", "$63 Million","$25 Million"," $104 Million"], //budget
                    ["1995","1989","1997"," 2001", "1993"], //release
                    [ "James Horner","Hans Zimmer","Alan Silvestri", "John Williams","Thomas Newman"], //composer
                    ["Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","John Hammond","Ray Arnold"], //qoute1
                    ["John Hammond","Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","Ray Arnold"], //quote2
                    ["Dr. Alan Grant", "Dr. Ian Malcolm","Dr. Ellie Sattler","John Hammond","Ray Arnold"], //qoute2
                    ["Richard Attenborough", "Michale Kane", "Ian McKellen","Lewis Dodgson", "Bob Peck"],
-                    [ "Stephen Spielberg","George Lucas","James Cameron","Ridley Scott","Chris Columbus"], //TITANIC!!!! director
-                    [ "James Cameron", "David Koepp","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
-                    ["John Williams", "James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"], //Composer
-                    ["$2.19 Billion", "$1.6 Billion","$550 Million","$257 Million"," $100 Million"], //Gross
-                    [ "$125 Million","$175 Million","$200 million","$50 Million"," $104 Million"], //budget
-                    ["1997", "1993","1989","2003"," 2001"], //release
-                    ["Jack Dawson","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown","Brock Lovett"], //qoute1
-                    ["Ruth Dewitt Bukater","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown","Brock Lovett"], //quote2
-                    ["Jack Dawson","Rose DeWitt Bukater","Brock Lovett","Caledon 'Cal' Hockley","Molly Brown"], //qoute2
-                    ["Kate Winslet", "Kate Beckinsale", "Cate Blanchett","Kathy Bates", "Gloria Stuart"],
+                      [ "Stephen Spielberg","George Lucas","James Cameron","Ridley Scott","Chris Columbus"], //TITANIC!!!! director
+                      [ "James Cameron", "David Koepp","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
+                      ["John Williams", "James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"], //Composer
+                      ["$2.19 Billion", "$1.6 Billion","$550 Million","$257 Million"," $100 Million"], //Gross
+                      [ "$125 Million","$175 Million","$200 Million","$50 Million"," $104 Million"], //budget
+                      ["1997", "1993","1989","2003"," 2001"], //release
+                      ["Jack Dawson","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown","Brock Lovett"], //qoute1
+                      ["Ruth Dewitt Bukater","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown","Brock Lovett"], //quote2
+                      ["Jack Dawson","Rose DeWitt Bukater","Brock Lovett","Caledon 'Cal' Hockley","Molly Brown"], //qoute2
+                      ["Kate Winslet", "Kate Beckinsale", "Cate Blanchett","Kathy Bates", "Gloria Stuart"],
+                                [ "Stephen Spielberg","Frank Darabont","Christopher Nolan","Ridley Scott","Chris Columbus"], //Shawshank director
+                                [ "David Koepp","Tony Gilroy","David S. Goyer", "Frank Darabont", "Andy Wachowski"], // Writer
+                                ["John Williams", "James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"], //Composer
+                                ["$200 Million", "$1.6 Billion","","$50 Million", "$28 Million", "$100 Million"], //Gross
+                                [ "$125 Million","$175 Million","$200 Million","$50 Million"," $25 Million"], //budget
+                                ["1997", "1994","1989","2003"," 2001"], //release
+                                ["Andy Dufresne","Ellis Boyd 'Red' Redding","Warden Norton","Heywood,Tommy", "Colonel Coetzee"], //qoute1
+                                ["Andy Dufresne","Ellis Boyd 'Red' Redding","Warden Norton","Heywood,Tommy", "Colonel Coetzee"], //quote2
+                                ["Andy Dufresne","Ellis Boyd 'Red' Redding","Warden Norton","Heywood,Tommy", "Colonel Coetzee"], //qoute2
+                                ["George Wyner", "Tom Hanks", "Tim Robbins","Morgan Freeman", "Bob Eastman"],
+
                  ], //DO NOT move this bracket
 
                  answerList: [
@@ -81,17 +102,27 @@ var game = {
                    ["John Hammond"], //quote2
                    ["Dr. Ian Malcolm"], //qoute2
                    ["Richard Attenborough"],
-                    ["James Cameron"], //TITANIC !!!!!!!!director
-                    [ "James Cameron"], // Writer
-                    ["James Horner"], //composer
-                    ["$2.19 Billion"], //Gross
-                    ["$200 million"], //budget
-                    ["1997"], //release
-                    ["Jack Dawson"], //qoute1
-                    ["Ruth Dewitt Bukater"], //quote2
-                    ["Brock Lovett"], //qoute2
-                    ["Kate Winslet"],
-                 ] //DO NOT move this bracket
+                      ["James Cameron"], //TITANIC !!!!!!!!director
+                      [ "James Cameron"], // Writer
+                      ["James Horner"], //composer
+                      ["$2.19 Billion"], //Gross
+                      ["$200 million"], //budget
+                      ["1997"], //release
+                      ["Jack Dawson"], //qoute1
+                      ["Ruth Dewitt Bukater"], //quote2
+                      ["Brock Lovett"], //qoute2
+                      ["Kate Winslet"],
+                              ["Frank Darabont"], //Shawshank!!!!director
+                              [ "Frank Darabont"], // Writer
+                              ["Thomas Newman"], //composer
+                              ["$28 Million"], //Gross
+                              ["$25 Million"], //budget
+                              ["1994"], //release
+                              ["Andy Dufresne"], //qoute1
+                              ["Ellis Boyd 'Red' Redding"], //quote2
+                              ["Warden Norton"], //qoute2
+                              ["Tim Robbins"],
+                   ] //DO NOT move this bracket
 
 
                 },
@@ -140,8 +171,8 @@ var game = {
                   composer:"Thomas Newman",
                   actor:["Andy Dufresne","Ellis Boyd 'Red' Redding","Warden Norton","Heywood,Tommy", "Colonel Coetzee"],
                   quotes: ["Get busy living, or get busy dying.",
-                           "Andy Dufresne - who crawled through a river of [blank] and came out clean on the other side.","Forty years I been asking permission to piss. I can't squeeze a drop without say-so.",
-                            " We sat and drank with the sun on our shoulders and felt like free men. Hell, we could have been tarring the roof of one of our own houses."," Lord! It's a miracle! Man up and vanished like a fart in the wind!"],
+                           "Andy Dufresne - who crawled through a river of [$%#$] and came out clean on the other side.","Forty years I been asking permission to piss. I can't squeeze a drop without say-so.",
+                            " We sat and drank with the sun on our shoulders and felt like free men. Hell, we could have been tarring the roof of one of our own houses.","Lord! It's a miracle! Man up and vanished like a fart in the wind!"],
                },
 
 
