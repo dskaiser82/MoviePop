@@ -37,10 +37,10 @@ var game = {
                    'Who played the character John Hammond?',
                    'Who directed this movie?', // TITANIC!!!!!
                    'Who wrote this movie?', // writer
+                   'Who composed the soundtrack?', // composer
                    'What did this movie gross wordlwide?', // gross
                    'What was the production cost?', // production cost
                    'When was this movie released?', // release date
-                   'Who composed the soundtrack?', // composer
                    'Which character said: "That is what everybody says but, with all due respect, Miss, I am not the one hanging off the back of a ship here."', //quote1 6
                    'Who said: "You are not to see that boy again. Do you understand me? Rose, I forbid it."', //quote2
                    'Who said:"Seeing her coming out of the darkness like a ghost ship, it still gets me every time."', //quote3 7
@@ -48,26 +48,25 @@ var game = {
 
                   ], //DO Not move this bracket
                  buttonOptions: [
-                   ["Steven Spielberg", "James Cameron","Ed Zwick","Colin Trevorrow","Chris Columbus"], //director
-                   ["David Koepp", "James Cameron","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
+                   [ "James Cameron","Ed Zwick","Colin Trevorrow","Steven Spielberg","Chris Columbus"], //director
+                   [ "James Cameron", "David Koepp","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
                    ["$1.3 Billion", "$1.8 Billion","$550 Million","$257 Million"," $100 Million"], //Gross
-                   ["$63 million", "$125 Million","$55 Million","$25 Million"," $104 Million"], //budget
-                   ["1993", "1995","1989","1997"," 2001"], //release
-                   ["John Williams", "James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"], //composer
+                   [ "$125 Million","$55 Million", "$63 million","$25 Million"," $104 Million"], //budget
+                   ["1995","1989","1997"," 2001", "1993"], //release
+                   [ "James Horner","Hans Zimmer","Alan Silvestri", "John Williams","Thomas Newman"], //composer
                    ["Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","John Hammond","Ray Arnold"], //qoute1
                    ["John Hammond","Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","Ray Arnold"], //quote2
-                   ["Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","John Hammond","Ray Arnold"], //qoute2
+                   ["Dr. Alan Grant", "Dr. Ian Malcolm","Dr. Ellie Sattler","John Hammond","Ray Arnold"], //qoute2
                    ["Richard Attenborough", "Michale Kane", "Ian McKellen","Lewis Dodgson", "Bob Peck"],
-                    ["John Williams", "James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"], //TITANIC !!!! composer
-                    ["James Cameron", "Stephen Spielberg","George Lucas","Ridley Scott","Chris Columbus"], //director
+                    [ "Stephen Spielberg","George Lucas","James Cameron","Ridley Scott","Chris Columbus"], //TITANIC!!!! director
                     [ "James Cameron", "David Koepp","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
+                    ["John Williams", "James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"], //Composer
                     ["$2.19 Billion", "$1.6 Billion","$550 Million","$257 Million"," $100 Million"], //Gross
-                    ["$200 million", "$125 Million","$175 Million","$50 Million"," $104 Million"], //budget
+                    [ "$125 Million","$175 Million","$200 million","$50 Million"," $104 Million"], //budget
                     ["1997", "1993","1989","2003"," 2001"], //release
-                    ["James Horner", "john Williams","Hans Zimmer","Alan Silvestri","Thomas Newman"], //composer
                     ["Jack Dawson","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown","Brock Lovett"], //qoute1
                     ["Ruth Dewitt Bukater","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown","Brock Lovett"], //quote2
-                    ["Brock Lovett","Jack Dawson","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown"], //qoute2
+                    ["Jack Dawson","Rose DeWitt Bukater","Brock Lovett","Caledon 'Cal' Hockley","Molly Brown"], //qoute2
                     ["Kate Winslet", "Kate Beckinsale", "Cate Blanchett","Kathy Bates", "Gloria Stuart"],
                  ], //DO NOT move this bracket
 
@@ -82,13 +81,12 @@ var game = {
                    ["John Hammond"], //quote2
                    ["Dr. Ian Malcolm"], //qoute2
                    ["Richard Attenborough"],
-                    ["John Williams"], //TITANIC !!!! composer
-                    ["James Cameron"], //director
+                    ["James Cameron"], //TITANIC !!!!!!!!director
                     [ "James Cameron"], // Writer
+                    ["James Horner"], //composer
                     ["$2.19 Billion"], //Gross
                     ["$200 million"], //budget
                     ["1997"], //release
-                    ["James Horner"], //composer
                     ["Jack Dawson"], //qoute1
                     ["Ruth Dewitt Bukater"], //quote2
                     ["Brock Lovett"], //qoute2
