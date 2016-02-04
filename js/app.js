@@ -29,7 +29,18 @@ var game = {
                    'Which character said: "God creates dinosaurs. God destroys dinosaurs. God creates man. Man destroys God. Man creates dinosaurs."', //quote1 6
                    'Who said: "Find Nedry! Check the vending machines!"', //quote2
                    'Who said:"Yeah, but, John, if Pirates of the Caribbean breaks down, the pirates do not eat the tourists."', //quote3 7
-                   'Who played the character John Hammond?'], //array 9 which is Q10
+                   'Who played the character John Hammond?',
+                   'Who directed this movie?', // director 0
+                   'Who wrote this movie?', // writer
+                   'What did this movie gross wordlwide?', // gross
+                   'What was the production cost?', // production cost
+                   'When was this movie released?', // release date
+                   'Who composed the soundtrack?', // composer
+                   'Which character said: "That is what everybody says but, with all due respect, Miss, I am not the one hanging off the back of a ship here."', //quote1 6
+                   'Who said: "You are not to see that boy again. Do you understand me? Rose, I forbid it."', //quote2
+                   'Who said:"Seeing her coming out of the darkness like a ghost ship, it still gets me every time."', //quote3 7
+                   'Who played the female lead Rose?'
+                  ], //DO Not move this bracket
                  buttonOptions: [
                    ["Steven Spielberg", "James Cameron","Ed Zwick","Colin Trevorrow","Chris Columbus"], //director
                    ["David Koepp", "James Cameron","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
@@ -41,7 +52,18 @@ var game = {
                    ["John Hammond","Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","Ray Arnold"], //quote2
                    ["Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","John Hammond","Ray Arnold"], //qoute2
                    ["Richard Attenborough", "Michale Kane", "Ian McKellen","Lewis Dodgson", "Bob Peck"],
-                 ]
+                    ["John Williams", "James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"], //composer
+                    ["James Cameron", "Stephen Spielberg","George Lucas","Ridley Scott","Chris Columbus"], //director
+                    [ "James Cameron", "David Koepp","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
+                    ["$2.19 Billion", "$1.6 Billion","$550 Million","$257 Million"," $100 Million"], //Gross
+                    ["$200 million", "$125 Million","$175 Million","$50 Million"," $104 Million"], //budget
+                    ["1997", "1993","1989","2003"," 2001"], //release
+                    ["James Horner", "john Williams","Hans Zimmer","Alan Silvestri","Thomas Newman"], //composer
+                    ["Jack Dawson","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown","Brock Lovett"], //qoute1
+                    ["Ruth Dewitt Bukater","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown","Brock Lovett"], //quote2
+                    ["Brock Lovett","Jack Dawson","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown"], //qoute2
+                    ["Kate Winslet", "Kate Beckinsale", "Cate Blanchett","Kathy Bates", "Gloria Stuart"],
+                 ] //DO NOT move this bracket
 
 
                 },
@@ -60,7 +82,8 @@ var game = {
                     'Which character said: "That is what everybody says but, with all due respect, Miss, I am not the one hanging off the back of a ship here."', //quote1 6
                     'Who said: "You are not to see that boy again. Do you understand me? Rose, I forbid it."', //quote2
                     'Who said:"Seeing her coming out of the darkness like a ghost ship, it still gets me every time."', //quote3 7
-                    'Who played the female lead Rose?'], //array 9 which is Q10
+                    'Who played the female lead Rose?'
+                  ], //array 9 which is Q10
                   buttonOptions: [
                     ["James Cameron", "Stephen Spielberg","George Lucas","Ridley Scott","Chris Columbus"], //director
                     [ "James Cameron", "David Koepp","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
@@ -131,7 +154,7 @@ start();
 
 //Sets First Trailer
 function setTrailer(){
-$('#trailer-container').attr('src', game.movies[game.round].trailer)
+$('#trailer-container').attr('src', game.movies[0].trailer)
 //if playerCount > 9
 //$('#trailer-container').attr('src', game.movies[1].trailer)
 //if playerCount > 19
@@ -148,15 +171,15 @@ function populateBoard(){
 
 
   //This is saying correct answer is in position 1(change later to randowmize)
-  correctAnswer = game.movies[game.round].buttonOptions[game.currentQuestion][0]
+  correctAnswer = game.movies[0].buttonOptions[game.currentQuestion][0]
 
 
 //This is saying the
-  var buttonOptions = game.movies[game.round].buttonOptions[game.currentQuestion]
+  var buttonOptions = game.movies[0].buttonOptions[game.currentQuestion]
 
   // Question: This s saying to change quesion div to our question array above, and it notes currentQuestion as the position.
   //Our click function below says we are changinf current question number eveytime we click.
-  $("#question").html(game.movies[game.round].questions[game.currentQuestion]);
+  $("#question").html(game.movies[0].questions[game.currentQuestion]);
   $("#1").html(buttonOptions[0]);
   $("#2").html(buttonOptions[1]);
   $("#3").html(buttonOptions[2]);
