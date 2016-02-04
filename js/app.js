@@ -95,7 +95,7 @@ var game = {
                    ["Steven Spielberg"], //director
                    ["David Koepp",], // Writer
                    ["$1.3 Billion"], //Gross
-                   ["$63 million"], //budget
+                   ["$63 Million"], //budget
                    ["1993"], //release
                    ["John Williams"], //composer
                    ["Dr. Ian Malcolm"], //qoute1
@@ -263,38 +263,23 @@ $('.answer-button').click(function(){
   if($(this).text() == correctAnswer) {
     console.log("Correct!")
     $("#correct").text("Correct! "+ correctAnswer+".");
-console.log(playerCount)
-    //if single player true
+    console.log(playerCount)
+   if(game.currentPlayer == game.player1){
+     game.player1.score += 1
+     $("#p1-score").text(game.player1.score);
+   }
 
-  //   if(singlePlayer == true ){
-  //     answerCounterP1 += 1
-  //   $("#p1-score").text(answerCounterP1);
-  //
-  //
-  //   }
-  // else { //paramaters of single player if there is two players
-  //   if (playerCount % 5 == 0{
-  //     answerCounterP1 += 1
-  //     $("#p1-score").text(answerCounterP1);
-  //     $("#p1").fadeIn()
-  //
-  //   } else {
-  //     answerCounterP2 += 1
-  //     $("#p2-score").text(answerCounterP2);
-  //
-  //   }
-  // }
-  } else {//for wrong answers
-    console.log("Wrong!")
-    $("#correct").text("Sorry.  Try the next question.");
-  }
-    game.currentQuestion += 1
-    playerCount += 1
+          } else {//for wrong answers
+            console.log("Wrong!")
+            $("#correct").text("Sorry.  Try the next question.");
+          }
+            game.currentQuestion += 1
+            playerCount += 1
 
-    setTrailer()
-    playerTurn()
-    populateBoard()
-})
+            setTrailer()
+            playerTurn()
+            populateBoard()
+        })
 
 
 function playerTurn(){
@@ -305,8 +290,11 @@ function playerTurn(){
   //   game.currentPlayer == game.player2
   //   console.log("Switched players to player 2")
   // }
-
-  if(playerCount % 5 == 0) {
+  if (singlePlayer == true){
+    game.currentPlayer == game.player1
+    console.log(singlePlayer)
+  }
+  else if(playerCount % 5 == 0) {
     if(game.currentPlayer == game.player1){
       game.currentPlayer = game.player2
       console.log('Player 2 turn')
