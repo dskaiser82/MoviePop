@@ -2,14 +2,16 @@ console.log("Hi Dan")
 var correctAnswer = null
 var answerCounterP1 = 0
 var answerCounterP2 = 0
-var playerCount = 0
+var playerCount = 1
+
+var currentPlayer = player1
+var player1 = "player 1"
+var player2 = "player 2"
 
 var singlePlayer = null   //true or false
 
 
 var game = {
-        player1: {},
-        player2:{},
         round: 0,
         currentQuestion: 0,
         movies: [
@@ -173,24 +175,24 @@ $('.answer-button').click(function(){
 console.log(playerCount)
     //if single player true
 
-    if(singlePlayer == true ){
-      answerCounterP1 += 1
-    $("#p1-score").text(answerCounterP1);
-
-
-    }
-  else { //paramaters of single player if there is two players
-    if (playerCount < 5 || (playerCount >= 10 && playerCount < 15) || (playerCount >= 20 && playerCount < 25)){
-      answerCounterP1 += 1
-      $("#p1-score").text(answerCounterP1);
-      $("#p1").fadeIn()
-
-    } else {
-      answerCounterP2 += 1
-      $("#p2-score").text(answerCounterP2);
-
-    }
-  }
+  //   if(singlePlayer == true ){
+  //     answerCounterP1 += 1
+  //   $("#p1-score").text(answerCounterP1);
+  //
+  //
+  //   }
+  // else { //paramaters of single player if there is two players
+  //   if (playerCount % 5 == 0{
+  //     answerCounterP1 += 1
+  //     $("#p1-score").text(answerCounterP1);
+  //     $("#p1").fadeIn()
+  //
+  //   } else {
+  //     answerCounterP2 += 1
+  //     $("#p2-score").text(answerCounterP2);
+  //
+  //   }
+  // }
   } else {//for wrong answers
     console.log("Wrong!")
     $("#correct").text("Sorry.  Try the next question.");
@@ -198,9 +200,18 @@ console.log(playerCount)
     game.currentQuestion += 1
     playerCount += 1
 
-
-
+    playerTurn()
     populateBoard()
-
-
 })
+
+
+function playerTurn(){
+  if(playerCount % 5 == 0 && currentPlayer == game.player1){
+    currentPlayer == player2
+    console.log("Switched players to player 2")
+  } else if(playerCount % 5 == 0 && currentPlayer == game.player2){
+    currentPlayer == player1
+    console.log("Switched back to player 1")
+  }
+  }
+///tomorrow increase scorebaord by current
