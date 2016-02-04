@@ -2,16 +2,21 @@ console.log("Hi Dan")
 var correctAnswer = null
 var answerCounterP1 = 0
 var answerCounterP2 = 0
-var playerCount = 1
+var playerCount = 0
 
-var currentPlayer = player1
-var player1 = "player 1"
-var player2 = "player 2"
+
+
 
 var singlePlayer = null   //true or false
 
 
 var game = {
+       player1: {
+         score: 0
+       },
+       player2: {
+         score: 0
+       },
         round: 0,
         currentQuestion: 0,
         movies: [
@@ -121,6 +126,8 @@ var game = {
 
 }
 
+game.currentPlayer = game.player1
+
 
 //Start screen
 function start(){
@@ -229,12 +236,22 @@ console.log(playerCount)
 
 
 function playerTurn(){
-  if(playerCount % 5 == 0 && currentPlayer == game.player1){
-    currentPlayer == player2
-    console.log("Switched players to player 2")
-  } else if(playerCount % 5 == 0 && currentPlayer == game.player2){
-    currentPlayer == player1
-    console.log("Switched back to player 1")
+  // if((playerCount % 5 == 0) && (game.currentPlayer == game.player2)) {
+  //   game.currentPlayer == game.player1
+  //   console.log("Switched back to player 1")
+  // } else if((playerCount % 5 == 0) && (game.currentPlayer == game.player1)) {
+  //   game.currentPlayer == game.player2
+  //   console.log("Switched players to player 2")
+  // }
+
+  if(playerCount % 5 == 0) {
+    if(game.currentPlayer == game.player1){
+      game.currentPlayer = game.player2
+      console.log('Player 2 turn')
+    } else {
+      game.currentPlayer = game.player1
+      console.log('Player 1 turn')
+    }
   }
-  }
+}
 ///tomorrow increase scorebaord by current
