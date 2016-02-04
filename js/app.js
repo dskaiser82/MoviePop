@@ -118,7 +118,9 @@ $( ".p" ).click(function() {
 
 $("#single-player-button").click(function() {
    console.log("single player")
-   singlePlayer == true;
+   singlePlayer = true;
+   $("#p2-counter").fadeOut();
+   $("#p2-score").fadeOut();
     });
 //    $("#p1-score").text(answerCounter);
 // else  $( "#seven" ).click(function() {
@@ -189,20 +191,23 @@ $('.answer-button').click(function(){
     console.log("Correct!")
     $("#correct").text("Correct! "+ correctAnswer+".");
 
-    //if single player 
+    //if single player
 
     if(singlePlayer == true ){
-    answerCounterP1 += 1
+      answerCounterP1 += 1
     $("#p1-score").text(answerCounterP1);
+
 
     }
   else {
     if (playerCount < 5 || (playerCount > 10 && playerCount < 16) || (playerCount > 20 && playerCount < 25)){
-      $("#p1-score").text(answerCounterP1);
       answerCounterP1 += 1
+      $("#p1-score").text(answerCounterP1);
+
     } else {
-      $("#p2-score").text(answerCounterP2);
       answerCounterP2 += 1
+      $("#p2-score").text(answerCounterP2);
+
     }
   }
   } else {
