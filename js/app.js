@@ -12,10 +12,12 @@ var singlePlayer = null   //true or false
 
 var game = {
        player1: {
-         score: 0
+         score: 0,
+         displayElement: "#p1-score"
        },
        player2: {
-         score: 0
+         score: 0,
+         displayElement: "#p2-score"
        },
         round: 0,
         currentQuestion: 0,
@@ -264,22 +266,22 @@ $('.answer-button').click(function(){
     console.log("Correct!")
     $("#correct").text("Correct! "+ correctAnswer+".");
     console.log(playerCount)
-   if(game.currentPlayer == game.player1){
-     game.player1.score += 1
-     $("#p1-score").text(game.player1.score);
-   }
 
-          } else {//for wrong answers
-            console.log("Wrong!")
-            $("#correct").text("Sorry.  Try the next question.");
-          }
-            game.currentQuestion += 1
-            playerCount += 1
+     game.currentPlayer.score += 1
+     $(game.currentPlayer.displayElement).text(game.currentPlayer.score);
 
-            setTrailer()
-            playerTurn()
-            populateBoard()
-        })
+
+  } else {//for wrong answers
+    console.log("Wrong!")
+    $("#correct").text("Sorry.  Try the next question.");
+  }
+    game.currentQuestion += 1
+    playerCount += 1
+
+    setTrailer()
+    playerTurn()
+    populateBoard()
+})
 
 
 function playerTurn(){
