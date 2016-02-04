@@ -35,7 +35,7 @@ var game = {
                    'Who said: "Find Nedry! Check the vending machines!"', //quote2
                    'Who said:"Yeah, but, John, if Pirates of the Caribbean breaks down, the pirates do not eat the tourists."', //quote3 7
                    'Who played the character John Hammond?',
-                   'Who directed this movie?', // director 0
+                   'Who directed this movie?', // TITANIC!!!!!
                    'Who wrote this movie?', // writer
                    'What did this movie gross wordlwide?', // gross
                    'What was the production cost?', // production cost
@@ -44,7 +44,8 @@ var game = {
                    'Which character said: "That is what everybody says but, with all due respect, Miss, I am not the one hanging off the back of a ship here."', //quote1 6
                    'Who said: "You are not to see that boy again. Do you understand me? Rose, I forbid it."', //quote2
                    'Who said:"Seeing her coming out of the darkness like a ghost ship, it still gets me every time."', //quote3 7
-                   'Who played the female lead Rose?'
+                   'Who played the female lead Rose?',
+
                   ], //DO Not move this bracket
                  buttonOptions: [
                    ["Steven Spielberg", "James Cameron","Ed Zwick","Colin Trevorrow","Chris Columbus"], //director
@@ -57,7 +58,7 @@ var game = {
                    ["John Hammond","Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","Ray Arnold"], //quote2
                    ["Dr. Ian Malcolm","Dr. Alan Grant","Dr. Ellie Sattler","John Hammond","Ray Arnold"], //qoute2
                    ["Richard Attenborough", "Michale Kane", "Ian McKellen","Lewis Dodgson", "Bob Peck"],
-                    ["John Williams", "James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"], //composer
+                    ["John Williams", "James Horner","Hans Zimmer","Alan Silvestri","Thomas Newman"], //TITANIC !!!! composer
                     ["James Cameron", "Stephen Spielberg","George Lucas","Ridley Scott","Chris Columbus"], //director
                     [ "James Cameron", "David Koepp","Tony Gilroy","David S. Goyer"," Andy Wachowski"], // Writer
                     ["$2.19 Billion", "$1.6 Billion","$550 Million","$257 Million"," $100 Million"], //Gross
@@ -68,6 +69,30 @@ var game = {
                     ["Ruth Dewitt Bukater","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown","Brock Lovett"], //quote2
                     ["Brock Lovett","Jack Dawson","Rose DeWitt Bukater","Caledon 'Cal' Hockley","Molly Brown"], //qoute2
                     ["Kate Winslet", "Kate Beckinsale", "Cate Blanchett","Kathy Bates", "Gloria Stuart"],
+                 ], //DO NOT move this bracket
+
+                 answerList: [
+                   ["Steven Spielberg"], //director
+                   ["David Koepp",], // Writer
+                   ["$1.3 Billion"], //Gross
+                   ["$63 million"], //budget
+                   ["1993"], //release
+                   ["John Williams"], //composer
+                   ["Dr. Ian Malcolm"], //qoute1
+                   ["John Hammond"], //quote2
+                   ["Dr. Ian Malcolm"], //qoute2
+                   ["Richard Attenborough"],
+                    ["John Williams"], //TITANIC !!!! composer
+                    ["James Cameron"], //director
+                    [ "James Cameron"], // Writer
+                    ["$2.19 Billion"], //Gross
+                    ["$200 million"], //budget
+                    ["1997"], //release
+                    ["James Horner"], //composer
+                    ["Jack Dawson"], //qoute1
+                    ["Ruth Dewitt Bukater"], //quote2
+                    ["Brock Lovett"], //qoute2
+                    ["Kate Winslet"],
                  ] //DO NOT move this bracket
 
 
@@ -117,7 +142,7 @@ var game = {
                   composer:"Thomas Newman",
                   actor:["Andy Dufresne","Ellis Boyd 'Red' Redding","Warden Norton","Heywood,Tommy", "Colonel Coetzee"],
                   quotes: ["Get busy living, or get busy dying.",
-                           "Andy Dufresne - who crawled through a river of S_^$^ and came out clean on the other side.","Forty years I been asking permission to piss. I can't squeeze a drop without say-so.",
+                           "Andy Dufresne - who crawled through a river of [blank] and came out clean on the other side.","Forty years I been asking permission to piss. I can't squeeze a drop without say-so.",
                             " We sat and drank with the sun on our shoulders and felt like free men. Hell, we could have been tarring the roof of one of our own houses."," Lord! It's a miracle! Man up and vanished like a fart in the wind!"],
                },
 
@@ -178,7 +203,7 @@ function populateBoard(){
 
 
   //This is saying correct answer is in position 1(change later to randowmize)
-  correctAnswer = game.movies[0].buttonOptions[game.currentQuestion][0]
+  correctAnswer = game.movies[0].answerList[game.currentQuestion]
 
 
 //This is saying the
