@@ -21,22 +21,24 @@ h1{font-family: 'Lobster', cursive;
 #p1-counter{
   display: inline-block;
   color: white;
+
 }
 
 #p1-score{
-  border: 5px solid black;
   display: inline-block;
-  margin-right: 504px;
+  border: 5px solid black;
   background-color: #b30000;
   padding: 15px;
   color: gold;
-  font-family: 'Lobster';
+  font-family: 'Lobster', cursive;
   font-size: 30px;
+  margin-right: 300px;
 }
 
 #p2-counter{
   display: inline-block;
   color: white;
+  margin-left: 300px;
 }
 
 #p2-score{
@@ -45,10 +47,20 @@ h1{font-family: 'Lobster', cursive;
   background-color: #b30000;
   padding: 15px;
   color: gold;
- font-family: 'Lobster', cursive;
+  font-family: 'Lobster', cursive;
   font-size: 30px;
 }
 
+
+.square{
+  border: 5px solid black;
+  display: inline-block;
+  margin: auto;
+  background-color: #b30000;
+  color: gold;
+  font-family: 'Lobster';
+  font-size: 30px;
+}
 
 
 #correct{
@@ -88,12 +100,12 @@ margin: auto;
   margin: auto;
 }
 
-#six{
+#single-player-button{
   margin-right: 50px;
   margin-top: 50px;
 }
 
-#six{
+#second-player-button{
   margin-top: 50px;
 }
 
@@ -108,7 +120,7 @@ margin: auto;
 
 
 
-.b{
+.answer-button{
   width: 150px;
   height: 50px;
   background-color: #B22222;

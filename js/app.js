@@ -1,6 +1,12 @@
 console.log("Hi Dan")
 var correctAnswer = null
-var playerCount = null
+var answerCounterP1 = 0
+var answerCounterP2 = 0
+var playerCount = 0
+
+var singlePlayer = null   //true or false
+
+
 var game = {
         player1: {},
         player2:{},
@@ -86,41 +92,68 @@ var game = {
                },
 
 
-
         ]
 
-
-
-
-
 }
-//Jurassic Park 10 Qs
- // $("#question").html("What is Kaiser of this Monkey?");
- // $("#1").html("Boogey");
- // $("#2").html("Boogey");
- // $("#3").html("Boogey");
- // $("#4").html("Boogey");
 
+
+//Start screen
 function start(){
 $("#question").text("Welcome to MoviePop: a movie quiz game. Please select one or two players to begin. ");
 $("#b-box").hide();
+$(".square").hide();
 $( ".p" ).click(function() {
   $( "#b-box-player" ).fadeOut( "slow", function() {
     setTrailer()
     populateBoard()
+    $(".square").fadeIn();
     $("#b-box").fadeIn()
+
   });
 });
 
-
-
-
 }
+
+
+
+$("#single-player-button").click(function() {
+   console.log("single player")
+   singlePlayer == true;
+    });
+//    $("#p1-score").text(answerCounter);
+// else  $( "#seven" ).click(function() {
+//    singlePlayer == false
+//
+// });
+//
+// }
+//
+
+
+
+
+
+
+
+
+
 
 start();
 
+
+
+
+
+
+
+
+//Sets First Trailer
 function setTrailer(){
 $('#trailer-container').attr('src', game.movies[game.round].trailer)
+//if playerCount > 9
+//$('#trailer-container').attr('src', game.movies[1].trailer)
+//if playerCount > 19
+//$('#trailer-container').attr('src', game.movies[2].trailer)
 
 
 }
@@ -149,17 +182,36 @@ function populateBoard(){
 
 //populateBoard()
 
-$('.b').click(function(){
+$('.answer-button').click(function(){
   console.log($(this).text())
   // check if it's the correct answer
   if($(this).text() == correctAnswer) {
     console.log("Correct!")
     $("#correct").text("Correct! "+ correctAnswer+".");
+
+    //if single player 
+
+    if(singlePlayer == true ){
+    answerCounterP1 += 1
+    $("#p1-score").text(answerCounterP1);
+
+    }
+  else {
+    if (playerCount < 5 || (playerCount > 10 && playerCount < 16) || (playerCount > 20 && playerCount < 25)){
+      $("#p1-score").text(answerCounterP1);
+      answerCounterP1 += 1
+    } else {
+      $("#p2-score").text(answerCounterP2);
+      answerCounterP2 += 1
+    }
+  }
   } else {
     console.log("Wrong!")
     $("#correct").text("Sorry.  Try the next question.");
   }
-  game.currentQuestion += 1
-  playerCount += 1
-  populateBoard()
+    game.currentQuestion += 1
+    playerCount += 1
+    populateBoard()
+
+
 })
