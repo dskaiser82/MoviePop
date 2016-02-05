@@ -1,0 +1,168 @@
+
+
+
+
+.wrapper{
+  text-align: center;
+  height: 800px;
+  border: 5px solid black;
+  margin: auto;
+  background-image: url("https://i.ytimg.com/vi/50AF-uFpRtc/maxresdefault.jpg");
+  background-repeat: repeat-x;
+}
+
+.seats{
+  background-repeat: repeat-x;
+  background-image: url("http://motorcitymuckraker.com/wp-content/uploads/2013/08/Movie-theater.jpg");
+  background-repeat: repeat-x;
+  height: 800px;
+
+}
+
+h1{font-family: 'Lobster', cursive;
+  font-size: 50px;
+  color: white;
+
+}
+
+
+#p1-counter{
+  display: inline-block;
+  color: white;
+
+}
+
+#p1-score{
+  display: inline-block;
+  border: 5px solid black;
+  background-color: #b30000;
+  padding: 15px;
+  color: gold;
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+  margin-right: 300px;
+}
+
+#p2-counter{
+  display: inline-block;
+  color: white;
+  margin-left: 300px;
+}
+
+#p2-score{
+  display: inline-block;
+  border: 5px solid black;
+  background-color: #b30000;
+  padding: 15px;
+  color: gold;
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+}
+
+
+.square{
+  border: 5px solid black;
+  display: inline-block;
+  margin: auto;
+  background-color: #b30000;
+  color: gold;
+  font-family: 'Lobster';
+  font-size: 30px;
+}
+
+
+#correct{
+width: 800px;
+height: 30px;
+font-size: 20px;
+color: white;
+margin: auto;
+!--border 5px solid black--!
+
+
+}
+
+
+
+#question{
+  font-size: 30px;
+  color: white;
+  margin-top: 20px;
+  font-family: 'Passion One', light;
+
+}
+
+
+
+
+#b-box{
+  height: 300px;
+  width: auto;
+  margin-top: 10px;
+
+}
+
+#b-box-player{
+  height: 300px;
+  width: 500px;
+  margin: auto;
+}
+
+#single-player-button{
+  margin-right: 50px;
+  margin-top: 50px;
+}
+
+#second-player-button{
+  margin-top: 50px;
+}
+
+.p{
+  width: 150px;
+  height: 50px;
+  background-color: #B22222;
+  color: white;
+  font-size: 12px;
+
+}
+
+
+
+.answer-button{
+  width: 150px;
+  height: 50px;
+  background-color: #B22222;
+  color: white;
+  font-size: 12px;
+
+}
+
+@media only screen and (max-width: 892px){
+		#p1-score{
+			margin: 0 auto;
+		}
+    #p2-score{
+      margin: 0 auto;
+    }
+}
+
+
+
+@media only screen and (max-width: 602px){
+		#p1-score{
+			display: block;
+		}
+    #p2-score{
+      display: block;
+      text-align: center;
+      margin: auto;
+    }
+    #p1-counter{
+			display: block;
+		}
+    #p2-counter{
+      display: block;
+      text-align: center;
+      margin: auto;
+    }
+}

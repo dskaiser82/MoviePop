@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MoviePop Movie Quiz</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Asset' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Passion+One:400,700,900' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <h1>MoviePop MovieQuiz</h1>
+           <div id="p1-counter">P1 Scrore</div>
+           <div id="p1-score">0</div>
+              <div class="square" id= "p1" >Player 1 Turn</div>
+              <div class="square" id= "p2" >Player 1 Turn</div>
+
+              <button class="square" id= "p3" onclick="window.location.href= 'http://www.fleacircus.tv/moviepop'">click to play again</button>
+
+           <div id="p2-counter">P2 Scrore</div>
+           <div id="p2-score">0</div>
+
+
+      <div id="question">Correct!</div>
+      <div id="b-box-player">
+        <button class = "p" id="single-player-button" type="button" name="button">One Player</button>
+        <button class = "p" id="second-player-button" type="button" name="button">Two Players</button>
+
+        <img src="http://images.clipartpanda.com/movie-popcorn-clipart-no-background-popcorn-555px.png" alt="popcorn" height="150" width="150">
+
+      </div>
+
+
+
+
+
+
+<br><br>
+<iframe id="trailer-container" width="500" height="281" src="" frameborder="0" allowfullscreen></iframe>
+
+
+<div id = "correct"></div>
+
+
+  <div id="b-box">
+    <button class = "answer-button" id="1" type="button" name="button">James Wacky</button>
+    <button class = "answer-button" id="2" type="button" name="button">Steven Guttenberg</button>
+    <br>  <br>
+    <button class = "answer-button" id="3" type="button" name="button">Robery Mondav</button>
+    <button class = "answer-button" id="4" type="button" name="button">Edward Zwick</button>
+    <button class = "answer-button" id="5" type="button" name="button">Colin Trevorrow</button>
+     </div>
+
+</div>
+
+
+<div class="seats">
+</div>
+
+
+
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="js/app.js"></script>
+  </body>
+</html>
