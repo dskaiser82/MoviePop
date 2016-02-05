@@ -1,16 +1,15 @@
 console.log("Hi Dan")
-var correctAnswer = null
-var answerCounterP1 = 0
-var answerCounterP2 = 0
+
+
 var playerCount = 0
-
-
-
-
 var singlePlayer = null   //true or false
 
 
 var game = {
+       correctAnswer: null,
+       round: 0,
+       currentQuestion: 0,
+
        player1: {
          score: 0,
          displayElement: "#p1-score"
@@ -19,8 +18,81 @@ var game = {
          score: 0,
          displayElement: "#p2-score"
        },
-        round: 0,
-        currentQuestion: 0,
+       setWinner: function setWinner(){
+         if(playerCount == 30){
+           $("#trailer-container").hide()
+           $("#p1").text("Click to Play again!")
+           $("#p1").fadeIn("thanks for playing!")
+           console.log("Won bro")
+         }
+       },
+       //Start screen
+       start: function start(){
+         game.currentPlayer = game.player1
+         $("#question").text("Welcome to MoviePop: a movie quiz game. Please select one or two players to begin. ");
+         $("#p1").hide();
+         $("#p2").hide();
+         $("#b-box").hide();
+         $( ".p" ).click(function() {
+           $( "#b-box-player" ).fadeOut( "slow", function() {
+             game.setTrailer()
+             game.populateBoard()
+             $("#b-box").fadeIn()
+           });
+         });
+       },
+       setTrailer: function setTrailer(){
+         if(playerCount == 0){
+           $('#trailer-container').attr('src', game.movies[0].trailer)
+         }
+         if(playerCount == 10){
+           $('#trailer-container').attr('src', game.movies[1].trailer)
+         }
+          if(playerCount == 20){
+            $('#trailer-container').attr('src', game.movies[2].trailer)
+          }
+       },
+       populateBoard: function populateBoard(){
+
+         //This is saying correct answer is in position 1(change later to randowmize)
+         game.correctAnswer = game.movies[0].answerList[game.currentQuestion]
+
+
+       //This is saying the buttons for answers are populated by below
+         var buttonOptions = game.movies[0].buttonOptions[game.currentQuestion]
+
+         // Question: This s saying to change quesion div to our question array above, and it notes currentQuestion as the position.
+         //Our click function below says we are changinf current question number eveytime we click.
+         $("#question").html(game.movies[0].questions[game.currentQuestion]);
+
+          // This sets the answer buttons
+         for(var i = 0; i < 5; i++){
+           $("#"+(i+1)).html(buttonOptions[i]);
+         }
+
+       },
+       playerTurn: function playerTurn(){
+         if (singlePlayer == true){
+           game.currentPlayer == game.player1
+           console.log(singlePlayer)
+         }
+         else if(playerCount % 5 == 0) {
+           if(game.currentPlayer == game.player1){
+             game.currentPlayer = game.player2
+             console.log('Player 2 turn')
+             $("#p1").fadeIn()
+             $("#p1").text("Player 2 Turn")
+             $('#p1').css({"background-color":"black"});
+
+           } else {
+             game.currentPlayer = game.player1
+             console.log('Player 1 turn')
+             $("#p1").fadeIn()
+            $("#p1").text("Player 1 Turn")
+            $('#p1').css({"background-color":"#b30000"});
+           }
+         }
+       },
         movies: [
                {
                  title: "Jurassic Park",
@@ -57,6 +129,7 @@ var game = {
                              'Who said: "Andy Dufresne - who crawled through a river of [expletive] and came out clean on the other side."', //quote2
                              'Who said:"Lord! It is a miracle! Man up and vanished like a fart in the wind!" ', //quote3 7
                              'Who played Andy Dufresne',
+                             'Thanks for Playing!',
 
                   ], //DO Not move this bracket
                  buttonOptions: [
@@ -183,26 +256,7 @@ var game = {
 
 }
 
-game.currentPlayer = game.player1
-
-
-//Start screen
-function start(){
-$("#question").text("Welcome to MoviePop: a movie quiz game. Please select one or two players to begin. ");
-$("#p1").hide();
-$("#p2").hide();
-$("#b-box").hide();
-$( ".p" ).click(function() {
-  $( "#b-box-player" ).fadeOut( "slow", function() {
-    setTrailer()
-    populateBoard()
-    $("#b-box").fadeIn()
-
-  });
-});
-
-}
-
+game.start();
 
 
 $("#single-player-button").click(function() {
@@ -210,61 +264,16 @@ $("#single-player-button").click(function() {
    singlePlayer = true;
    $("#p2-counter").fadeOut();
    $("#p2-score").fadeOut();
-    });
+});
 
 
-start();
-
-
-//Sets First Trailer
-function setTrailer(){
-if(playerCount == 0){
-$('#trailer-container').attr('src', game.movies[0].trailer)
-}
-if(playerCount == 10){
-  $('#trailer-container').attr('src', game.movies[1].trailer)
-
-}
- if(playerCount == 20){
-   $('#trailer-container').attr('src', game.movies[2].trailer)
-
- }
-
-
-}
-
-
-
-function populateBoard(){
-
-
-
-
-  //This is saying correct answer is in position 1(change later to randowmize)
-  correctAnswer = game.movies[0].answerList[game.currentQuestion]
-
-
-//This is saying the
-  var buttonOptions = game.movies[0].buttonOptions[game.currentQuestion]
-
-  // Question: This s saying to change quesion div to our question array above, and it notes currentQuestion as the position.
-  //Our click function below says we are changinf current question number eveytime we click.
-  $("#question").html(game.movies[0].questions[game.currentQuestion]);
-  $("#1").html(buttonOptions[0]);
-  $("#2").html(buttonOptions[1]);
-  $("#3").html(buttonOptions[2]);
-  $("#4").html(buttonOptions[3]);
-  $("#5").html(buttonOptions[4]);
-}
-
-//populateBoard()
 
 $('.answer-button').click(function(){
   console.log($(this).text())
   // check if it's the correct answer
-  if($(this).text() == correctAnswer) {
+  if($(this).text() == game.correctAnswer) {
     console.log("Correct!")
-    $("#correct").text("Correct! "+ correctAnswer+".");
+    $("#correct").text("Correct! "+ game.correctAnswer+".");
     console.log(playerCount)
 
      game.currentPlayer.score += 1
@@ -278,32 +287,9 @@ $('.answer-button').click(function(){
     game.currentQuestion += 1
     playerCount += 1
 
-    setTrailer()
-    playerTurn()
-    populateBoard()
+    game.setWinner()
+    game.setTrailer()
+    game.playerTurn()
+    game.populateBoard()
+
 })
-
-
-function playerTurn(){
-  // if((playerCount % 5 == 0) && (game.currentPlayer == game.player2)) {
-  //   game.currentPlayer == game.player1
-  //   console.log("Switched back to player 1")
-  // } else if((playerCount % 5 == 0) && (game.currentPlayer == game.player1)) {
-  //   game.currentPlayer == game.player2
-  //   console.log("Switched players to player 2")
-  // }
-  if (singlePlayer == true){
-    game.currentPlayer == game.player1
-    console.log(singlePlayer)
-  }
-  else if(playerCount % 5 == 0) {
-    if(game.currentPlayer == game.player1){
-      game.currentPlayer = game.player2
-      console.log('Player 2 turn')
-    } else {
-      game.currentPlayer = game.player1
-      console.log('Player 1 turn')
-    }
-  }
-}
-///tomorrow increase scorebaord by current
