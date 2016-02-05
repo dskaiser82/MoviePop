@@ -19,10 +19,6 @@ MoviePop features 30 questions and 10 questions per movie.
 
 
 
-
-
-
-
 --
 
 ### Technical Requirements
@@ -47,6 +43,3 @@ Your app must:
 * A **git repository hosted on Github**, with a link to your hosted game, and frequent commits dating back to the very beginning of the project
 * **A ``readme.md`` file** with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
 
----
-
-### Necessary Deliverables
