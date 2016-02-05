@@ -21,9 +21,12 @@ var game = {
        setWinner: function setWinner(){
          if(playerCount == 30){
            $("#trailer-container").hide()
-           $("#p1").text("Click to Play again!")
-           $("#p1").fadeIn("thanks for playing!")
-           console.log("Won bro")
+            $("#p3").text("Click to Play Again")
+            $("#p3").fadeIn(8000)
+            $("#correct").fadeOut()
+            //$("#b-box").fadeOut()
+
+
          }
        },
        //Start screen
@@ -32,6 +35,7 @@ var game = {
          $("#question").text("Welcome to MoviePop: a movie quiz game. Please select one or two players to begin. ");
          $("#p1").hide();
          $("#p2").hide();
+         $("#p3").hide();
          $("#b-box").hide();
          $( ".p" ).click(function() {
            $( "#b-box-player" ).fadeOut( "slow", function() {
@@ -68,6 +72,7 @@ var game = {
           // This sets the answer buttons
          for(var i = 0; i < 5; i++){
            $("#"+(i+1)).html(buttonOptions[i]);
+
          }
 
        },
@@ -90,7 +95,9 @@ var game = {
              $("#p1").fadeIn()
             $("#p1").text("Player 1 Turn")
             $('#p1').css({"background-color":"#b30000"});
-           }
+          } if(playerCount == 30){
+               $("#p1").fadeOut()
+              }
          }
        },
         movies: [
@@ -283,6 +290,8 @@ $('.answer-button').click(function(){
   } else {//for wrong answers
     console.log("Wrong!")
     $("#correct").text("Sorry.  Try the next question.");
+
+
   }
     game.currentQuestion += 1
     playerCount += 1
